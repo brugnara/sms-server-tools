@@ -39,7 +39,7 @@ CFLAGS += -D_FILE_OFFSET_BITS=64
 
 all: smsd
 
-smsd: smsd.c extras.o locking.o cfgfile.o logging.o alarm.o smsd_cfg.o charset.o stats.o blacklist.o whitelist.o modeminit.o pdu.o received2file.o system.o consts.o translation.o header_helpers.o
+smsd: smsd.c extras.o locking.o cfgfile.o logging.o alarm.o smsd_cfg.o charset.o stats.o blacklist.o whitelist.o modeminit.o pdu.o received2file.o system.o consts.o translation.o header_helpers.o readSMS.o macro.o
 
 ifneq (,$(findstring SOLARIS,$(CFLAGS)))
 ifeq (,$(findstring DISABLE_INET_SOCKET,$(CFLAGS)))
