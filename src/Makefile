@@ -37,9 +37,9 @@ CFLAGS += -D_FILE_OFFSET_BITS=64
 # Use the following only on GNU/Linux and only if you need ps listing like "smsd: MAINPROCESS" and "smsd: GSM1"
 # CFLAGS += -D USE_LINUX_PS_TRICK
 
-all: smsd 
+all: smsd
 
-smsd: smsd.c extras.o locking.o cfgfile.o logging.o alarm.o smsd_cfg.o charset.o stats.o blacklist.o whitelist.o modeminit.o pdu.o
+smsd: smsd.c extras.o locking.o cfgfile.o logging.o alarm.o smsd_cfg.o charset.o stats.o blacklist.o whitelist.o modeminit.o pdu.o received2file.o system.o consts.o
 
 ifneq (,$(findstring SOLARIS,$(CFLAGS)))
 ifeq (,$(findstring DISABLE_INET_SOCKET,$(CFLAGS)))
@@ -49,7 +49,7 @@ endif
 
 ifneq (,$(findstring NOSTATS,$(CFLAGS)))
 	$(CC) $(CFLAGS) -o $@ $^ $(LFLAGS)
-else 
+else
 	$(CC) `mm-config --cflags` $(CFLAGS) -o $@ $^ `mm-config --ldflags --libs` $(LFLAGS)
 endif
 

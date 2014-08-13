@@ -1,2 +1,3 @@
 src/*.o
 src/smsd
+ORIG/

@@ -27,7 +27,7 @@ Either version 2 of the License, or (at your option) any later version.
 int set_numberformat(int *numberformat, char *number, int number_type);
 
 // Make the PDU string from a mesage text and destination phone number.
-// The destination variable pdu has to be big enough. 
+// The destination variable pdu has to be big enough.
 // alphabet indicates the character set of the message.
 // flash_sms enables the flash flag.
 // mode select the pdu version (old or new).
@@ -35,8 +35,8 @@ int set_numberformat(int *numberformat, char *number, int number_type);
 void make_pdu(char* number, char* message, int messagelen, int alphabet, int flash_sms, int report, int udh,
               char* udh_data, char* mode, char* pdu, int validity, int replace_msg, int system_msg, int number_type, char *smsc);
 
-// Splits a PDU string into the parts 
-// Input: 
+// Splits a PDU string into the parts
+// Input:
 // pdu is the pdu string
 // mode can be old or new and selects the pdu version
 // Output:
@@ -49,7 +49,7 @@ void make_pdu(char* number, char* message, int messagelen, int alphabet, int fla
 // is_statusreport is 1 if this was a status report
 // is_unsupported_pdu is 1 if this pdu was not supported
 // udh return the udh as hex dump
-// Returns the length of the message 
+// Returns the length of the message
 int splitpdu(char *pdu, char *mode, int *alphabet, char *sendr, char *date, char *time, char *message,
              char *smsc, int *with_udh, char *a_udh_data, char *a_udh_type, int *is_statusreport,
              int *is_unsupported_pdu, char *from_toa, int *report, int *replace, char *warning_headers,

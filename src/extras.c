@@ -33,6 +33,7 @@ Either version 2 of the License, or (at your option) any later version.
 #include "smsd_cfg.h"
 #include "logging.h"
 #include "alarm.h"
+#include "consts.h"
 
 int yesno(char *value)
 {
@@ -649,7 +650,7 @@ int getfile(int trust_directory, char *dir, char *filename, int lock)
           snprintf(reason, sizeof(reason), "%s", "Access denied. Check the file and directory permissions.");
           if (getfile_err_store)
             if (strstr(getfile_err_store, storage_key))
-              report = 0; 
+              report = 0;
 
           if (report)
           {
@@ -864,7 +865,7 @@ int getfile(int trust_directory, char *dir, char *filename, int lock)
         // 3.1.12: sleep less:
         //sleep(1);
         usleep_until(time_usec() + 500000);
-            
+
         if (stat(fname, &statbuf))
           groesse2 = -1;
         else
@@ -1572,7 +1573,7 @@ void getfield(char* line, int field, char* result, int size)
   {
     start=strchr(start+1,',');
     if (start==0)
-      return;      
+      return;
   }
   start++;
   while (start[0]=='\"' || start[0]==' ')
@@ -1591,5 +1592,5 @@ void getfield(char* line, int field, char* result, int size)
   result[length]=0;
 #ifdef DEBUGMSG
   printf("!! result=%s\n",result);
-#endif    
+#endif
 }
