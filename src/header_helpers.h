@@ -13,4 +13,6 @@ char *get_header(const char *header, char *header2);
 int test_header(int *hlen, char *line, const char *header, char *header2);
 int prepare_remove_headers(char *remove_headers, size_t size);
 
+int change_headers(char *filename, char *remove_headers, char *add_buffer, char *add_headers, ...);
+
 #endif
