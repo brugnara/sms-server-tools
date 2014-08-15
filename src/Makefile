@@ -29,6 +29,9 @@ CFLAGS += -D NOSTATS
 # The following option is only used by developers
 # CFLAGS += -D DEBUGMSG
 
+# Enable REDIS pub/sub for dispatching SMSs!
+CFLAGS += -D REDIS
+
 CFLAGS += -W -Wall
 
 # The following enables logfile size more than 2GB

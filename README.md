@@ -11,3 +11,7 @@ I need to put my SMS into REDIS and use PUB/SUB for sending, bypassing the files
 `SMS Server 3` easily through a stable communication protocol as Redis is.
 
 Keep in touch!
+
+## Build
+
+You can disable REDIS disabling the flag into `Makefile`
